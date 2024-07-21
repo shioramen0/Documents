@@ -11,7 +11,7 @@
     @if (session('message'))
         <div class="alert alert-info alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
-                *
+                ×
             </button>
             {{ session('message') }}
         </div>
@@ -35,7 +35,7 @@
                         <tr>
                             <td>{{ $product->name }}</td>
                             {{-- 数字フォーマット --}}
-                            <td>{{ number_format($product->price) }}</td>
+                            <td>{{number_format($product->price)}}</td>
                             <td>
                                 <a class="btn btn-primary btn-sm mb-2" href="{{ route('product.edit', $product->id) }}"
                                     role="button">編集</a>

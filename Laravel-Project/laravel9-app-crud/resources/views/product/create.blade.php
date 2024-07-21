@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    @if ($errors=>any())
+    @if ($errors->any())
         <div class="alert alert-warning alert-dismissible">
             {{-- エラーの表示 --}}
             <ul>
@@ -26,13 +26,13 @@
              {{-- 商品名入力 --}}
             <div class="form-group">
                <label for="name">商品名</label>
-               <inout type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
+               <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
                placeholder="商品名" />
             </div>
             {{-- 価格入力 --}}
             <div class="form-group">
                <label for="price">価格</label>
-               <inout type="text" class="form-control" id="price" name="price" value="{{ old('price') }}"
+               <input type="text" class="form-control" id="price" name="price" value="{{ old('price') }}"
                placeholder="価格" />
             </div>
 

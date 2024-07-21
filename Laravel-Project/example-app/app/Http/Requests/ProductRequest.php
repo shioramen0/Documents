@@ -8,12 +8,10 @@ class ProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     * 
-     * @return bool
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,10 +22,7 @@ class ProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            // 商品名。最大値は64文字
-            'name' => 'required|string|max:64',
-            // 価格
-            'price' => 'required|integer'
+            //
         ];
     }
 }

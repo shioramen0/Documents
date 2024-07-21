@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    @if ($errors=>any())
+    @if ($errors->any())
         <div class="alert alert-warning alert-dismissible">
             {{-- エラーの表示 --}}
             <ul>
@@ -18,21 +18,21 @@
         </div>
     @endif
 
-    {{-- 登録画面 --}}
+    {{-- 編集画面 --}}
     <div class="card">
-        <form action="{{ route('product.store') }}" method="post">
-        @csrf
+        <form action="{{ route('product.update', $product->id) }}" method="post">
+        @csrf @method('PUT')
         <div class="card-body">
              {{-- 商品名入力 --}}
             <div class="form-group">
                <label for="name">商品名</label>
-               <inout type="text" class="form-control" id="name" name="name" value="{{ old('name') }}"
+               <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}"
                placeholder="商品名" />
             </div>
             {{-- 価格入力 --}}
             <div class="form-group">
                <label for="price">価格</label>
-               <inout type="text" class="form-control" id="price" name="price" value="{{ old('price') }}"
+               <input type="text" class="form-control" id="price" name="price" value="{{ old('price', $product->price) }}"
                placeholder="価格" />
             </div>
 

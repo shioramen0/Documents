@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\http\Requests\ProductRequest;
+use App\Http\Requests\ProductRequest;
 
 class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
      * @return \Illuminate\Http\Response
      */
     public function index()
@@ -60,7 +61,7 @@ class ProductsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         //
         $product = Product::find($id);
@@ -75,7 +76,7 @@ class ProductsController extends Controller
      * @param int $id
      * @return \Illminate\Http\Response
      */
-    public function update(Request $request, string $id)
+    public function update(ProductRequest $request, $id)
     {
         //
         $product = Product::find($id);
